@@ -5,7 +5,7 @@ export interface IPopperTooltipProps {
     placement?: Placement;
     TransitionProps?: any;
     popperRef?: any;
-    anchorEl?: any;
+    target?: any;
     disablePortal?: boolean;
     modifiers?: any;
     visible?: boolean;
@@ -21,5 +21,5 @@ export interface IPopperProps {
     popperOptions?: any;
     popperRef?: any;
     keepMounted?: boolean;
-    anchorEl?: any;
+    target?: any;
 }

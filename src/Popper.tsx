@@ -15,7 +15,7 @@ const PopperTooltip = React.forwardRef((props: IPopperTooltipProps, ref) => {
 
     const {
         children,
-        anchorEl,
+        target,
         disablePortal,
         placement: initialPlacement,
         TransitionProps,
@@ -48,7 +48,7 @@ const PopperTooltip = React.forwardRef((props: IPopperTooltipProps, ref) => {
     });
 
     useEffect(() => {
-        if (!anchorEl || !visible) {
+        if (!target || !visible) {
             return undefined;
         }
 
@@ -86,7 +86,7 @@ const PopperTooltip = React.forwardRef((props: IPopperTooltipProps, ref) => {
             popperModifiers = popperModifiers.concat(popperOptions.modifiers);
         }
 
-        const popper: any = createPopper(getAnchorEl(anchorEl), tooltipRef.current, {
+        const popper: any = createPopper(getAnchorEl(target), tooltipRef.current, {
             placement: initialPlacement,
             ...popperOptions,
             modifiers: popperModifiers,
@@ -98,7 +98,7 @@ const PopperTooltip = React.forwardRef((props: IPopperTooltipProps, ref) => {
             popper.destroy();
             handlePopperRefRef.current(null);
         };
-    }, [anchorEl, disablePortal, modifiers, visible, popperOptions, initialPlacement]);
+    }, [target, disablePortal, modifiers, visible, popperOptions, initialPlacement]);
 
     const childProps: any = { placement };
 
@@ -125,7 +125,7 @@ const Popper = React.forwardRef((props: IPopperProps, ref) => {
         popperRef,
         keepMounted = false,
         popperOptions = defaultPopperOptions,
-        anchorEl,
+        target,
         ...restProps
     } = props;
 
@@ -154,7 +154,7 @@ const Popper = React.forwardRef((props: IPopperProps, ref) => {
                 placement={placement}
                 popperOptions={popperOptions}
                 popperRef={popperRef}
-                anchorEl={anchorEl}
+                target={target}
                 {...restProps}
                 TransitionProps={
                     transition
