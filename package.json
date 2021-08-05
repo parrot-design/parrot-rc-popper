@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "@parrotjs/classnames": "^2.0.2",
-    "@parrotjs/popperjs": "0.0.2",
+    "@parrotjs/popperjs": "0.0.3",
     "@parrotjs/react-hooks": "^0.1.4",
     "@parrotjs/react-portal": "^0.0.5"
   },
